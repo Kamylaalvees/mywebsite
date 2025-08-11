@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamyla Lemos - Designer & Landscape Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf9; /* warm-50 */
+            color: #292524; /* stone-800 */
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-slide-up {
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        .animate-float {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <nav class="max-w-7xl mx-auto px-6 py-6">
+            <div class="flex justify-between items-center">
+                <a href="#" class="font-serif text-2xl font-light tracking-wide text-stone-800">
+                    Kamyla Lemos
+                </a>
+
+                <div class="hidden md:flex space-x-10">
+                    <button class="nav-link text-stone-700 hover:text-sage-600 font-light tracking-wide text-sm uppercase" data-section="about">About</button>
+                    <button class="nav-link text-stone-700 hover:text-sage-600 font-light tracking-wide text-sm uppercase" data-section="services">Services</button>
+                    <button class="nav-link text-stone-700 hover:text-sage-600 font-light tracking-wide text-sm uppercase" data-section="contact">Contact</button>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden p-2 text-stone-700">
+                    <svg id="menu-icon" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-6 py-6 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+                <div class="flex flex-col space-y-6 px-6">
+                    <button class="nav-link text-stone-700 hover:text-sage-600 font-light tracking-wide text-sm uppercase text-left" data-section="about">About</button>
+                    <button class="nav-link text-stone-700 hover:text-sage-600 font-light tracking-wide text-sm uppercase text-left" data-section="services">Services</button>
+                    <button class="nav-link text-stone-700 hover:text-sage-600 font-light tracking-wide text-sm uppercase text-left" data-section="contact">Contact</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative flex items-center justify-center overflow-hidden">
+        <!-- Background Image Container -->
+        <div class="absolute inset-0 z-0">
+            <!--
+                The image tag is now using a local relative path.
+                The onerror attribute is a fallback in case the image file is not found.
+            -->
+            <img src="../image/my-hero.jpg" 
+     onerror="this.src='https://placehold.co/1920x1080/4a5568/ffffff?text=Background+Image+Failed'"
+     alt="A serene, minimalist interior space"
+     class="w-full h-full object-cover">
+            
+            <!-- A subtle overlay to help text readability -->
+            <div class="absolute inset-0 bg-stone-900/20"></div>
+        </div>
+        <div class="relative z-10 text-center text-white max-w-5xl mx-auto px-6 animate-fade-in">
+            <h1 class="font-serif text-6xl md:text-8xl font-light mb-8 tracking-wide leading-tight">
+                Kamyla Lemos
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-12 opacity-90 tracking-wide max-w-3xl mx-auto leading-relaxed">
+                Designing spaces to transcend
+            </p>
+            <p class="text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed opacity-80 mb-16">
+                Spaces that nurture connection, calm and belonging. Where every design speaks to the soul and reconnects us with the earth.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a
+                    href="https://www.canva.com/design/DAGu-U88YAQ/Qm1OXNp1pjBoISeGSLI5lA/watch?utm_content=DAGu-U88YAQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h72c6ac560c"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/30 text-white hover:bg-white hover:text-stone-800 transition-all duration-300 font-light tracking-wide text-sm uppercase backdrop-blur-sm"
+                >
+                    Discover My Work
+                </a>
+                <a
+                    href="mailto:kamyla.alves.pimenta@live.com"
+                    class="px-8 py-3 bg-sage-600/80 text-white hover:bg-sage-700 transition-all duration-300 font-light tracking-wide text-sm uppercase backdrop-blur-sm"
+                >
+                    Let's Connect
+                </a>
+            </div>
+        </div>
+        <button
+            id="scroll-indicator"
+            class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors duration-300 animate-float"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+    </section>
+
+    <section id="about" class="py-24 bg-warm-50">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="space-y-8 text-stone-600 leading-relaxed animate-slide-up">
+            <h2 class="font-serif text-5xl md:text-6xl font-light mb-12 text-stone-800 tracking-wide leading-tight">
+              About Me
+            </h2>
+            <p class="text-lg text-justify">
+              My journey as a designer is driven by a core belief in the
+              power of reconnecting with ourselves, the earth, and the energy that moves
+              through all living beings. The spaces we inhabit, from the home to the
+              landscape, should be a source of that connection. I find deep peace around
+              animals and feel most fulfilled when I'm creating spaces that nurture
+              connection, calm, and a sense of belonging.
+            </p>
+            <p class="text-lg text-justify">
+              My Interior Design degree taught me to create residential
+              spaces that were tailored to everyone’s personality and needs. I learned that
+              understanding space, movement, and the overall experience was essential, and it
+              taught me empathy, adaptability, and how to design for real people with real
+              needs. I felt a pull beyond the walls I was designing, which led me to become a
+              Landscape Architect. Now, I aim to help people reconnect with nature in
+              intentional, nourishing ways, making these experiences accessible with just a
+              short walk.
+            </p>
+            <p class="text-lg text-justify">
+              As someone who left home to chase growth and create
+              something meaningful, I know what it means to search for belonging. That’s why
+              I design the way I do. I want every space to feel like home, not just in form,
+              but in feeling where it feels safe, seen, and inspired by the presence of other
+              living beings. I believe in energy, in meaningful connections, and in design
+              that speaks to the soul.
+            </p>
+            <p class="text-lg font-medium text-sage-700 text-justify">
+              My long-term dream is to build a self-sustaining sanctuary
+              for animals, a place that offers them safety, dignity and love that heals
+              them but also us. It's a vision that fuels my work today, for their future.
+            </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg mt-12 animate-slide-up">
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-medium text-stone-800 mb-2">Education</h4>
+                <p class="text-stone-600">PGDip in Landscape Architecture</p>
+                <p class="text-stone-600">Interior Design Background</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-stone-800 mb-2">Experience</h4>
+                <p class="text-stone-600">3 years of interior design experience</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-stone-800 mb-2">Location</h4>
+                <p class="text-stone-600">London, UK</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12 animate-slide-up">
+            <p class="text-xl text-stone-700 font-light italic leading-relaxed max-w-3xl mx-auto">
+              If you believe in creating spaces that go beyond the expected, places that leave a lasting imprint, I’d love to connect! Shall we build something meaningful together..
+            </p>
+          </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 animate-slide-up">
+                <h2 class="font-serif text-5xl md:text-6xl font-light mb-8 text-stone-800 tracking-wide">
+                    Services
+                </h2>
+                <p class="text-xl text-stone-600 max-w-4xl mx-auto leading-relaxed">
+                    Creating spaces that transcend the ordinary, where design becomes a bridge
+                    between our inner world and the natural environment that sustains us.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="group p-10 bg-warm-50 rounded-lg hover:bg-sage-50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slide-up [animation-delay:0.2s]">
+                    <div class="mb-8">
+                        <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-200 transition-colors duration-300">
+                            <svg class="w-8 h-8 text-sage-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-light text-stone-800 mb-4">Residential Interior Design</h3>
+                        <p class="text-stone-600 leading-relaxed mb-8 text-lg">
+                            Creating homes that reflect your unique story and nurture your daily rituals. Every space is designed to feel like a sanctuary where you can truly belong.
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3">
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Personalised space planning</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Sustainable material selection</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Biophilic design integration</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Custom furniture curation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group p-10 bg-warm-50 rounded-lg hover:bg-sage-50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slide-up [animation-delay:0.3s]">
+                    <div class="mb-8">
+                        <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-200 transition-colors duration-300">
+                            <svg class="w-8 h-8 text-sage-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.419 2.06c-.651-.54-1.554-.784-2.222-.501a4.265 4.265 0 0 0-1.782 1.782c-.283.668-.039 1.571.501 2.222l8.06 8.06c.54.651.784 1.554.501 2.222a4.265 4.265 0 0 1-1.782 1.782c-.668.283-1.571.039-2.222-.501z"></path><path d="M11 11.5a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-light text-stone-800 mb-4">Landscape Architecture</h3>
+                        <p class="text-stone-600 leading-relaxed mb-8 text-lg">
+                            Designing outdoor spaces that reconnect you with nature's healing energy. From intimate gardens to expansive landscapes that invite contemplation.
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3">
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Native plant design</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Sustainable water systems</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Wildlife habitat creation</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Therapeutic garden spaces</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group p-10 bg-warm-50 rounded-lg hover:bg-sage-50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slide-up [animation-delay:0.4s]">
+                    <div class="mb-8">
+                        <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-200 transition-colors duration-300">
+                            <svg class="w-8 h-8 text-sage-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16.24 7.76l-8.48 8.48"></path><path d="M12 2v20"></path><path d="M22 12H2"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-light text-stone-800 mb-4">Holistic Space Planning</h3>
+                        <p class="text-stone-600 leading-relaxed mb-8 text-lg">
+                            Understanding how energy flows through spaces and creating environments that support your wellbeing, productivity, and sense of peace.
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3">
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Energy flow analysis</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Natural light optimisation</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Acoustic design</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Mindful material choices</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group p-10 bg-warm-50 rounded-lg hover:bg-sage-50 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 animate-slide-up [animation-delay:0.5s]">
+                    <div class="mb-8">
+                        <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-sage-200 transition-colors duration-300">
+                            <svg class="w-8 h-8 text-sage-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-light text-stone-800 mb-4">Conscious Design Consultation</h3>
+                        <p class="text-stone-600 leading-relaxed mb-8 text-lg">
+                            Guidance for those seeking to create spaces with deeper meaning — places that honour both human needs and our connection to the natural world.
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3">
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Design philosophy development</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Sustainable practice guidance</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Animal-friendly design</span>
+                        </li>
+                        <li class="text-stone-500 flex items-center">
+                            <div class="w-2 h-2 bg-sage-400 rounded-full mr-4 flex-shrink-0"></div>
+                            <span class="font-light">Wellness-focused planning</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-warm-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 animate-slide-up">
+                <h2 class="font-serif text-5xl md:text-6xl font-light mb-8 text-stone-800 tracking-wide">
+                    Let's Create Together
+                </h2>
+                <p class="text-xl text-stone-600 max-w-4xl mx-auto leading-relaxed">
+                    Ready to create a space that speaks to your soul? I'd love to hear about your vision
+                    and explore how we can bring meaningful design into your world.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="space-y-10 animate-slide-up">
+                    <div>
+                        <h3 class="font-serif text-2xl font-light mb-8 text-stone-800">Connect With Me</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start space-x-6">
+                                <div class="w-14 h-14 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="text-sage-600" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-stone-800 mb-2">Email</h4>
+                                    <p class="text-stone-600">kamyla.alves.pimenta@live.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-6">
+                                <div class="w-14 h-14 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="text-sage-600" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.04-6.04A19.79 19.79 0 0 1 2 4.18V2a2 2 0 0 1 2-2h3.18a2 2 0 0 1 1.95 1.76l.82 4.96a2 2 0 0 1-1.15 1.78l-2.07 1.11a1 1 0 0 0-.58.58l1.11 2.07a2 2 0 0 0 1.78 1.15l4.96-.82A2 2 0 0 1 18.06 17z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-stone-800 mb-2">Phone</h4>
+                                    <p class="text-stone-600">+44 07526760407</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-6">
+                                <div class="w-14 h-14 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="text-sage-600" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z"></path><circle cx="12" cy="9" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-stone-800 mb-2">Location</h4>
+                                    <p class="text-stone-600">London, UK<br />Available for projects worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-sage-50 p-8 rounded-lg animate-slide-up">
+                        <h4 class="font-medium text-stone-800 mb-4">Follow My Journey</h4>
+                        <p class="text-stone-600 mb-6 text-sm">
+                            Stay connected as I share insights on conscious design, nature connection,
+                            and the path toward creating my animal sanctuary.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a
+                                href="https://www.linkedin.com/in/kamyla-alve-plemos/"
+                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-sage-100 transition-colors duration-200 shadow-sm"
+                            >
+                                <svg class="text-stone-600 hover:text-sage-600" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 0-6 6v7h4v-7a2 2 0 0 1 2-2 2 2 0 0 1 2 2v7h4V14a6 6 0 0 0-6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-10 animate-slide-up">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h4 class="font-medium text-stone-800 mb-4">My Approach</h4>
+                        <p class="text-stone-600 leading-relaxed mb-6">
+                            Every project begins with understanding your unique story and connection to space.
+                            I believe in collaborative design that honours both your vision and the natural world.
+                        </p>
+                        <p class="text-stone-600 text-sm">
+                            Response time: I typically respond within up to 48 hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-cyan-950 text-stone-300 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="font-serif text-2xl font-light mb-6 tracking-wide text-white">Kamyla Lemos</h3>
+                    <p class="text-stone-400 leading-relaxed mb-6">
+                        Creating spaces that transcend the ordinary, deep connections between people, nature and the energy that flows through all living beings.
+                    </p>
+                    <p class="text-stone-500 text-sm italic">
+                        "Every space should feel like home, not just in shape but in feeling."
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-medium mb-6 text-white">Services</h4>
+                    <ul class="space-y-3 text-stone-400">
+                        <li>Residential Interior Design</li>
+                        <li>Landscape Architecture</li>
+                        <li>Holistic Space Planning</li>
+                        <li>Conscious Design Consultation</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-medium mb-6 text-white">Connect</h4>
+                    <div class="space-y-3 text-stone-400">
+                        <p>kamyla.alves.pimenta@live.com</p>
+                        <p>London, UK</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-cyan-700 mt-12 pt-8 text-center">
+                <p class="text-stone-400 text-sm">
+                    &copy; 2025 Kamyla Lemos. All rights reserved. | Designing with love for people, animals and the earth.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const scrollIndicator = document.getElementById('scroll-indicator');
+
+            // Header shrink on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white/90', 'backdrop-blur-sm', 'shadow-md');
+                } else {
+                    header.classList.remove('bg-white/90', 'backdrop-blur-sm', 'shadow-md');
+                }
+            });
+
+            // Mobile menu toggle functionality
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Smooth scroll for nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const sectionId = link.getAttribute('data-section');
+                    const targetSection = document.getElementById(sectionId);
+
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+
+                    // Close mobile menu after clicking a link
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Smooth scroll for hero scroll indicator
+            scrollIndicator.addEventListener('click', () => {
+                const aboutSection = document.getElementById('about');
+                if (aboutSection) {
+                    aboutSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
